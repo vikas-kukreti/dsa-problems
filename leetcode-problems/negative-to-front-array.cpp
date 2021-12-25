@@ -4,26 +4,12 @@ using namespace std;
 template <typename T>
 void moveNegative(T arr[], int start, int end)
 {
-    while (start <= end)
+    while (start < end)
     {
-        if (arr[start] < 0 && arr[end] < 0)
-            start++;
-        else if (arr[start] > 0 && arr[end] < 0)
-        {
-            T temp = arr[end];
-            arr[end] = arr[start];
-            arr[start] = temp;
-            end--;
-            start++;
-        }
-        else if (arr[start] > 0 && arr[end] > 0)
-        {
-            end--;
-        }
-        else
-        {
-            start++;
-            end--;
+        while(arr[start] < 0) start++;
+        while(arr[end] >= 0) end--;
+        if(start < end) {
+            swap(arr[start], arr[end]);
         }
     }
 }

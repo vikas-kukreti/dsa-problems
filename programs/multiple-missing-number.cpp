@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-// using sorted list | O(n)
+// using sorted list | O(N)
 vector<int> missingNumbers(vector<int> nums) {
     vector<int> missing;
     int diff = *nums.begin();

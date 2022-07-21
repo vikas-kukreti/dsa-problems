@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 void sort(int arr[], int size)
@@ -30,9 +30,25 @@ void kthMinMax(int arr[], int size, int k)
     cout << "Maximum(" << k << ") : " << arr[size - k - 1] << endl;
 }
 
+void kthMinMaxPQ(int arr[], int size, int k) {
+    priority_queue<int> pq;
+    for(int i=0; i<k; i++) {
+        pq.push(arr[i]);
+    }
+
+    for(int i=k; i<size; i++) {
+        if(pq.top() > arr[i]) {
+            pq.pop();
+            pq.push(arr[i]);
+        }
+    }
+
+    cout << pq.top();
+}
+
 int main()
 {
-    int array[5] = {2, 1, 6, 98, 4};
-    int k = 2;
-    kthMinMax(array, 5, k);
+    int array[8] = {2, 1, 6, 9, 8, 4};
+    int k = 3;
+    kthMinMax(array, 6, k);
 }

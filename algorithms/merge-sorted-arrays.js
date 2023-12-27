@@ -22,5 +22,8 @@ function mergeSortedArrays(array1, array2) {
     return result;
 }
 
-const result = mergeSortedArrays([0, 3, 4, 31, 32, 40], [4, 6, 30, 31, 40, 41]);
+const result = mergeSortedArrays(
+    [0, 3, 4, 31, 32, 43, 90],
+    [4, 6, 30, 31, 40, 41]
+);
 console.log(result);
